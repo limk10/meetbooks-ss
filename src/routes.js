@@ -3,10 +3,12 @@ import { Switch, Route } from "react-router-dom";
 
 // Home
 import Home from "~/screens/Home";
+
 // Books
 import ListBooks from "~/screens/Books/List";
 import DetailBooks from "~/screens/Books/Details";
 import FavoriteBooks from "~/screens/Books/Favorites";
+
 // NotFound
 import NotFound from "~/screens/NotFound";
 
