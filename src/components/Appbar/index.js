@@ -50,7 +50,7 @@ const Navbar = () => {
                 className={classes.menu}
                 variant="h6"
               >
-                Meus Favoritos
+                Favoritos
               </Typography>
             </div>
             <div style={{ flexGrow: 1 }} />
