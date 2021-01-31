@@ -20,8 +20,11 @@ import {
   getBooksLocalStorage,
 } from "~/helpers/localStorage";
 
+import { useHistory } from 'react-router-dom'
+
 const CardBook = (params) => {
   const classes = useStyles();
+  const history = useHistory();
   const [favorites, setFavorites] = useState([]);
   const [isFavorites, setIsFavorites] = useState(false);
   const { book } = params;
@@ -79,7 +82,7 @@ const CardBook = (params) => {
             </IconButton>
           </div>
           <div>
-            <IconButton className={classes.iconButton} aria-label="share">
+            <IconButton onClick={() => history.push(`/books/details/${book?.id}`)} className={classes.iconButton} aria-label="share">
               <VisibilityOutlinedIcon />
             </IconButton>
           </div>
