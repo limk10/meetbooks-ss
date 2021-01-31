@@ -90,15 +90,17 @@ const List = () => {
                 </Grid>
               ))}
             </Grid>
-            <Box mt={3}>
-              <Pagination
-                color="primary"
-                onChange={(e, value) => handleSearch(e, value)}
-                page={pageBookList}
-                count={Math.trunc(booksList?.totalItems / 10)}
-                variant="outlined"
-              />
-            </Box>
+            <Grid container>
+              <Box mt={3}>
+                <Pagination
+                  color="primary"
+                  onChange={(e, value) => handleSearch(e, value)}
+                  page={pageBookList}
+                  count={Math.trunc(booksList?.totalItems / 10)}
+                  variant="outlined"
+                />
+              </Box>
+            </Grid>
           </>
         )}
 
