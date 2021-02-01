@@ -11,7 +11,7 @@ const Characteristics = (params) => {
   const { book } = params;
 
   return (
-    <Grid container>
+    <Grid data-testid="characteristicsBook" container>
       <Grid item xs={12}>
         <Card className={classes.marginTop}>
           <CardContent>

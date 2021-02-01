@@ -9,7 +9,7 @@ const Description = (params) => {
   const { book } = params;
 
   return (
-    <Grid container>
+    <Grid data-testid="descriptionBook" container>
       <Grid item xs={12}>
         <Card className={classes.marginTop}>
           <CardContent>

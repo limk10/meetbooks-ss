@@ -56,6 +56,7 @@ const FilterBook = () => {
         />
         <div className={classes.wrapper}>
           <Button
+            data-testid="searchButton"
             fullWidth
             type="submit"
             variant="contained"

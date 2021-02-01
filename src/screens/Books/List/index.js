@@ -50,6 +50,7 @@ const List = () => {
     <Grid container spacing={3}>
       <Grid item xs={12} sm={4}>
         <Button
+          data-testid="filterButton"
           className={classes.btnFilter}
           fullWidth
           variant={showFilter ? "contained" : "outlined"}

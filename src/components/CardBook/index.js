@@ -20,7 +20,7 @@ import {
   getBooksLocalStorage,
 } from "~/helpers/localStorage";
 
-import { useHistory } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 const CardBook = (params) => {
   const classes = useStyles();
@@ -50,7 +50,7 @@ const CardBook = (params) => {
 
   return (
     <div>
-      <Card className={classes.root}>
+      <Card data-testid="cardBox" className={classes.root}>
         <CardHeader
           title={volumeInfo?.title}
           subheader={volumeInfo?.subtitle}
@@ -74,6 +74,7 @@ const CardBook = (params) => {
         <CardActions className={classes.cardActions} disableSpacing>
           <div>
             <IconButton
+              data-testid="favoriteButton"
               className={classes.iconButton}
               aria-label="add to favorites"
               onClick={() => handleMyBooks()}
@@ -82,7 +83,11 @@ const CardBook = (params) => {
             </IconButton>
           </div>
           <div>
-            <IconButton onClick={() => history.push(`/books/details/${book?.id}`)} className={classes.iconButton} aria-label="share">
+            <IconButton
+              onClick={() => history.push(`/books/details/${book?.id}`)}
+              className={classes.iconButton}
+              aria-label="share"
+            >
               <VisibilityOutlinedIcon />
             </IconButton>
           </div>
