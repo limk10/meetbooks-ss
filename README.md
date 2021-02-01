@@ -21,6 +21,7 @@
 - [Documentação](#documentacao)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Como Usar](#como-usar)
+- [Executando Testes](#executando-testes)
 
 <a id="sobre"></a>
 
@@ -77,7 +78,32 @@ O projeto foi desenvolvido utilizando algumas das tecnologias
   $ yarn start
 ```
 
-<a id="como-usarr"></a>
+<a id="como-usar"></a>
+
+
+## :fire: Executando Testes
+
+- ### **Pré-requisitos**
+
+  - Necessário **necessário** possuir o **[Node.js](https://nodejs.org/en/)** e o  **[GIT](https://git-scm.com/)** instalado na máquina
+  - É **preciso** ter um gerenciador de pacotes seja o **[NPM](https://www.npmjs.com/)** ou **[Yarn](https://yarnpkg.com/)**.
+
+
+1. Executando os testes:
+
+```sh
+  # Entre na pasta raiz do projeto
+  $ cd meetbooks-ss
+    
+  # Instale as dependências
+  $ yarn
+
+  # Execute o teste
+  $ yarn test
+  
+```
+
+<a id="executando-testes"></a>
 
 
 ## :memo: License
