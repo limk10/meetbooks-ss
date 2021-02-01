@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Grid, Card, CardContent, Typography, Box } from "@material-ui/core";
+import { Grid, Card, CardContent, Typography, Box, Button } from "@material-ui/core";
 
 import { formatBRLMoney } from "~/helpers/money";
 
@@ -9,6 +9,14 @@ import useStyles from "../styles";
 const ImageDetails = (params) => {
   const classes = useStyles();
   const { book } = params;
+
+  const handleBuyBook = (link) => {
+    window.open(
+      link,
+      '_blank' // <- This is what makes it open in a new window.
+    );
+  }
+
   return (
     <Grid data-testid="imageDetailsBook" container>
       <Grid item xs={3}>
@@ -45,13 +53,33 @@ const ImageDetails = (params) => {
                   book?.volumeInfo?.categories[0]?.replaceAll("/", "•")}
               </Typography>
             </Grid>
-            {book?.saleInfo?.listPrice?.amount && (
-              <Box mt={3}>
+            <Box mt={3}>
+              {book?.saleInfo?.listPrice?.amount && (
                 <Grid item xs={12}>
-                  <Typography variant="h4" gutterBottom>
-                    {formatBRLMoney(book?.saleInfo?.listPrice?.amount)}
+                  <Typography color="textSecondary" variant="h5" gutterBottom>
+                    <del>
+                      {formatBRLMoney(book?.saleInfo?.listPrice?.amount)}
+                    </del>
                   </Typography>
                 </Grid>
+              )}
+              {book?.saleInfo?.retailPrice?.amount && (
+                <Grid item xs={12}>
+                  <Typography variant="h4" gutterBottom>
+                    {formatBRLMoney(book?.saleInfo?.retailPrice?.amount)}
+                  </Typography>
+                </Grid>
+              )}
+            </Box>
+            {book?.saleInfo?.buyLink && (
+              <Box mt={3}>
+                <Button
+                  onClick={() => handleBuyBook(book?.saleInfo?.buyLink)}
+                  variant="contained"
+                  color="primary"
+                >
+                  Comprar
+                </Button>
               </Box>
             )}
           </CardContent>
